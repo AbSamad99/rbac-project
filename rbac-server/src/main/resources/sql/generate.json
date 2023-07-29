@@ -1,0 +1,203 @@
+{
+  "tables": [
+    {
+      "name": "user_verification_info",
+      "columns": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "primary key"
+        },
+        {
+          "name": "user_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "hash",
+          "type": "varchar",
+          "dimension": "255",
+          "constraint": "not null"
+        },
+        {
+          "name": "salt",
+          "type": "varchar",
+          "dimension": "255",
+          "constraint": "not null"
+        },
+        {
+          "name": "status",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "password_reset_code",
+          "type": "varchar",
+          "dimension": "255",
+          "constraint": "not null"
+        },
+        {
+          "name": "password_reset_code_expiration",
+          "type": "timestamp",
+          "constraint": "not null"
+        },
+        {
+          "name": "verification_code",
+          "type": "varchar",
+          "dimension": "255",
+          "constraint": "not null"
+        },
+        {
+          "name": "verification_code_expiration",
+          "type": "timestamp",
+          "constraint": "not null"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "constraint": "not null"
+        },
+        {
+          "name": "modified_at",
+          "type": "timestamp",
+          "constraint": "not null"
+        }
+      ]
+    },
+    {
+      "name": "generic_permissions",
+      "columns": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "primary key"
+        },
+        {
+          "name": "name",
+          "type": "varchar",
+          "dimension": "50",
+          "constraint": "not null"
+        },
+        {
+          "name": "description",
+          "type": "varchar",
+          "dimension": "50",
+          "constraint": "not null"
+        }
+      ]
+    },
+    {
+      "name": "role_permission_mapping",
+      "columns": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "primary key"
+        },
+        {
+          "name": "name",
+          "type": "varchar",
+          "dimension": "50",
+          "constraint": "not null"
+        },
+        {
+          "name": "description",
+          "type": "varchar",
+          "dimension": "50",
+          "constraint": "not null"
+        },
+        {
+          "name": "entity_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "role_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "generic_permission_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "is_allowed",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        }
+      ]
+    },
+    {
+      "name": "roles",
+      "columns": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "primary key"
+        },
+        {
+          "name": "name",
+          "type": "varchar",
+          "dimension": "50",
+          "constraint": "not null"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "constraint": "not null"
+        },
+        {
+          "name": "created_by",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "modified_at",
+          "type": "timestamp",
+          "constraint": "not null"
+        },
+        {
+          "name": "modified_by",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        }
+      ]
+    },
+    {
+      "name": "user_role_mapping",
+      "columns": [
+        {
+          "name": "id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "primary key"
+        },
+        {
+          "name": "user_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        },
+        {
+          "name": "role_id",
+          "type": "numeric",
+          "dimension": "(10,0)",
+          "constraint": "not null"
+        }
+      ]
+    }
+  ]
+}
